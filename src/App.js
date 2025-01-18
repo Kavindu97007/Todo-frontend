@@ -5,6 +5,8 @@ import Navbar from './components/NavBar';
  import Register from './components/Register';
 import Login from './components/Login';
 import TaskList from './components/TaskList';
+import TaskForm from './components/TaskForm';
+import TaskUpdate from './components/TaskUpdate';
 
 const App = () => {
   return (
@@ -15,6 +17,9 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/tasks" element={<TaskList />} />
+        <Route path="/taskform" element={<TaskForm />} />
+        <Route path="/updatetaskform" element={<TaskUpdate />} />
+        {/* <Route path="/tasks/update/:taskId" element={<TaskUpdate />} /> */}
       </Routes>
     </Router>
   );
