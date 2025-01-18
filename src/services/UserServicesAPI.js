@@ -17,3 +17,18 @@ export const loginUser = async (credentials) => {
   });
   return response.json();
 };
+
+// export const loginUser = async (credentials) => {
+//   const response = await fetch(`${apiUrl}/login`, {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify(credentials),
+//   });
+
+//   if (!response.ok) {
+//     throw new Error(`HTTP error! status: ${response.status}`);
+//   }
+
+//   return response.json();
+// };
+
