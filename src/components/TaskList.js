@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getTasksByUser, deleteTask } from '../services/TaskServiceAPI';
+import { Link } from 'react-router-dom';
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -27,7 +28,11 @@ const TaskList = () => {
   }, []);
 
   return (
+    
     <div className="task-list">
+    <div>
+    <Link to="/taskform"><button>Add Task</button></Link>
+    </div>
       <h2>My Tasks</h2>
       <ul>
         {tasks.map((task) => (
@@ -35,7 +40,7 @@ const TaskList = () => {
             <h3>{task.title}</h3>
             <p>{task.description}</p>
             <div>
-              <button onClick={() => handleDelete(task._id)}>Delete</button>
+              <button onClick={() => handleDelete(task._id)}>Delete</button> <Link to="/updatetaskform"><button>Update</button></Link>
             </div>
           </li>
         ))}
