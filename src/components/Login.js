@@ -10,8 +10,12 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { token } = await loginUser({ email, password });
+      //const { token } = await loginUser({ email, password });
+
+      const response = await loginUser({ email, password }); // Assumes loginUser returns { token, userId }
+    const { token, userId } = response;
       localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId); // Save userId for fetching tasks later
       navigate('/tasks');
     } catch (error) {
       console.error('Login failed:', error);
